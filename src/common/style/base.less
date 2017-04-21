@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/**
+ * Created by KidSirZ4i on  2017/4/21.
+ */
+
+.clearfix {
+  display: inline-block;
+  &:after {
+    display: block;
+    content: ",";
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
