@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/**
+ * Created by KidSirZ4i on  2017/4/21.
+ */
+@media (min-device-pixel-ratio: 1.5) {
+  .border::after {
+    transform: scaleY(0.7);
+  }
+}
+@media (min-device-pixel-ratio: 2) {
+  .border::after {
+    transform: scaleY(0.5);
+  }
+}
+@media (min-device-pixel-ratio: 3) {
+  .border::after {
+    transform: scaleY(0.5);
+  }
+}

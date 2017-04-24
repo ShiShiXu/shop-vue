@@ -13,6 +13,23 @@
     height: 100%;
   }
 
+  .tabs {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    .tab-item {
+      flex: 1;
+      text-align: center;
+      a {
+        display: block;
+        font-size: 14px;
+        color: #4d555d;
+      }
+    }
+  }
+
 </style>
 
 
