@@ -34,38 +34,41 @@
       <img :src="seller.avatar" width="100%" height="100%">
     </div>
     <!-- 浮层 -->
-    <div v-show="detailShow" class="detail">
-      <div class="detail-wrapper clearfix">
-        <div class="detail-main">
-          <div class="name">{{seller.name}}</div>
-          <div class="star-wrapper">
-            <star :size="48" :score="seller.score"></star>
-          </div>
-          <div class="title">
-            <div class="line"></div>
-            <div class="text">优惠信息</div>
-            <div class="line"></div>
-          </div>
-          <ul v-if="seller.supports" class="supports">
-            <li class="support-item" v-for="(item,index) in seller.supports">
-              <span class="icon" :class="classMap[seller.supports[index].type]"></span>
-              <span class="text">{{seller.supports[index].description}}</span>
-            </li>
-          </ul>
-          <div class="title">
-            <div class="line"></div>
-            <div class="text">商家公告</div>
-            <div class="line"></div>
-          </div>
-          <div class="bulletin">
-            <p class="content">{{seller.bulletin}}</p>
+    <transition name="fade">
+      <div v-show="detailShow" class="detail">
+        <div class="detail-wrapper clearfix">
+          <div class="detail-main">
+            <div class="name">{{seller.name}}</div>
+            <div class="star-wrapper">
+              <star :size="48" :score="seller.score"></star>
+            </div>
+            <div class="title">
+              <div class="line"></div>
+              <div class="text">优惠信息</div>
+              <div class="line"></div>
+            </div>
+            <ul v-if="seller.supports" class="supports">
+              <li class="support-item" v-for="(item,index) in seller.supports">
+                <span class="icon" :class="classMap[seller.supports[index].type]"></span>
+                <span class="text">{{seller.supports[index].description}}</span>
+              </li>
+            </ul>
+            <div class="title">
+              <div class="line"></div>
+              <div class="text">商家公告</div>
+              <div class="line"></div>
+            </div>
+            <div class="bulletin">
+              <p class="content">{{seller.bulletin}}</p>
+            </div>
           </div>
         </div>
+        <div class="detail-close" @click="hideDetail">
+          <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
       </div>
-      <div class="detail-close" @click="hideDetail">
-        <i class="fa fa-close" aria-hidden="true"></i>
-      </div>
-    </div>
+    </transition>
+
   </div>
 
 </template>
@@ -101,7 +104,7 @@
        ];
     },
     components: {
-      star
+      star: star
     }
   };
 </script>
@@ -210,6 +213,7 @@
     .bulletin-wrapper {
       position: relative;
       height: 28px;
+      font-size: 0;
       line-height: 28px;
       padding: 0 22px 0 12px;
       white-space: nowrap;
@@ -258,8 +262,13 @@
       height: 100%;
       overflow: auto;
       background-color: rgba(7,17,27,.8);
-      backdrop-filter: blur(10px);
-      transition: all 0.5s;
+      backdrop-filter: blur(10px); /* 此模糊iOS才能实现 */
+      &.fade-enter-active, &.fade-leave-active {
+        transition: opacity .4s;
+      }
+      &.fade-enter, &.fade-leave-active {
+        opacity: 0;
+      }
       .detail-wrapper {
         width: 100%;
         min-height: 100%;

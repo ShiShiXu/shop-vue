@@ -17,3 +17,8 @@
     transform: scaleY(0.5);
   }
 }
+@media (min-device-pixel-ratio: 4) {
+  .border::after {
+    transform: scaleY(0.5);
+  }
+}

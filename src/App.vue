@@ -1,44 +1,9 @@
-<style lang="less" type="text/less" >
-
-  * {
-    -webkit-appearance: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif;
-    &:before, &:after {
-      box-sizing: border-box;
-    }
-  }
-
-  html, body {
-    height: 100%;
-  }
-
-  .tabs {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    position: relative;
-    .tab-item {
-      flex: 1;
-      text-align: center;
-      a {
-        display: block;
-        font-size: 14px;
-        color: #4d555d;
-      }
-    }
-  }
-
-</style>
-
-
 <template>
   <div>
 
     <shop-header :seller="seller"></shop-header>
 
-    <div class="tabs">
+    <div class="tabs border">
       <div class="tab-item">
         <router-link to="/goods">商品</router-link>
       </div>
@@ -50,7 +15,7 @@
       </div>
     </div>
 
-    <div class="content">
+    <div class="">
       <keep-alive>
         <router-view></router-view>
       </keep-alive>
@@ -84,3 +49,41 @@
     }
   };
 </script>
+
+<style lang="less" type="text/less" >
+  @import "common/style/mixin.less";
+
+  * {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif;
+    &:before, &:after {
+      box-sizing: border-box;
+    }
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+
+  .tabs {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    .border(rgba(7,17,27,0.1));
+    .tab-item {
+      flex: 1;
+      text-align: center;
+      a {
+        display: block;
+        font-size: 14px;
+        color: #4d555d;
+      }
+    }
+  }
+
+</style>
+
