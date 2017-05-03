@@ -142,7 +142,7 @@
             vertical-align: top;
             width: 30px;
             height: 18px;
-            background-image: url("brand@2x.png");
+            background-image: url("brand@3x.png");
             background-size: 30px 18px;
             background-repeat: no-repeat;
 
@@ -168,19 +168,19 @@
             background-size: 12px 12px;
             background-repeat: no-repeat;
             &.decrease {
-              background-image: url("decrease_1@2x.png");
+              background-image: url("decrease_1@3x.png");
             }
             &.discount {
-              background-image: url("discount_1@2x.png");
+              background-image: url("discount_1@3x.png");
             }
             &.guarantee {
-              background-image: url("guarantee_1@2x.png");
+              background-image: url("guarantee_1@3x.png");
             }
             &.invoice {
-              background-image: url("invoice_1@2x.png");
+              background-image: url("invoice_1@3x.png");
             }
             &.sepcial {
-              background-image: url("special_1@2x.png");
+              background-image: url("special_1@3x.png");
             }
           }
           .text {
@@ -318,19 +318,19 @@
                 background-size: 16px 16px;
                 background-repeat: no-repeat;
                 &.decrease {
-                  background-image: url("decrease_1@2x.png");
+                  background-image: url("decrease_1@3x.png");
                 }
                 &.discount {
-                  background-image: url("discount_1@2x.png");
+                  background-image: url("discount_1@3x.png");
                 }
                 &.guarantee {
-                  background-image: url("guarantee_1@2x.png");
+                  background-image: url("guarantee_1@3x.png");
                 }
                 &.invoice {
-                  background-image: url("invoice_1@2x.png");
+                  background-image: url("invoice_1@3x.png");
                 }
                 &.sepcial {
-                  background-image: url("invoice_1@2x.png");
+                  background-image: url("invoice_1@3x.png");
                 }
               }
               .text {
